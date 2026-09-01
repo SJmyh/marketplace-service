@@ -165,6 +165,11 @@ def _build_gradio_demo() -> gr.Blocks:
         )
     return demo
 
+@app.get("/version")
+def version() -> dict[str, str]:
+    """Вернуть версию сервиса — удобно проверить, что задеплоилась именно свежая сборка."""
+    return {"version": "0.1.0"}
+
 
 # mount_gradio_app встраивает форму в существующий FastAPI на адрес / и ВОЗВРАЩАЕТ
 # новый app — поэтому присваиваем обратно, иначе uvicorn не подхватит форму.
