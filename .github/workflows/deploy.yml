@@ -38,7 +38,7 @@ jobs:
             docker run -d \
               --name marketplace-satisfaction \
               --restart unless-stopped \
-              -p 80:8000 \
+              -p 127.0.0.1:8000:8000 \
               ${{ env.IMAGE }}:latest
 
             # убеждаемся, что контейнер действительно жив, и только тогда чистим диск
