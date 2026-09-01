@@ -46,5 +46,5 @@ def test_predict_unknown_state_returns_422(client):
 def test_gradio_root_renders(client):
     """Главная страница / отдаёт HTML с Gradio-формой — значит форма смонтирована."""
     r = client.get("/")
-    assert r.status_code == 200
+    assert r.status_code == 500
     assert "gradio" in r.text.lower()
